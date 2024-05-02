@@ -55,5 +55,8 @@ bcftools query -f "%CHROM\t%POS\t%REF\t%ALT\n" variants.vcf
 bcftools query -f "%CHROM\t%POS\t%REF\t%ALT\n" variants.vcf | wc -l
 
 ```
-
+### Anotating variants via VEP
+We will use online version of VEP for anotating variants.
+VEP can be found in following [link](https://www.ensembl.org/Tools/VEP).
+As the reference, we will use human genome, assembly GRCh38.p14.
 
