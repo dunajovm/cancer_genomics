@@ -71,6 +71,8 @@ Result showed, that one gene was affected by the found variants.
 
 Affected was gene [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000198286;r=7:2906142-3044228;tl=B5j5OQNfJqj0ZkRK-10087084). Out of total 41 variants, 38 variants were located in non-coding intron or exon parts of the gene. Only 3 variants were located in the coding part of the protein transcripts. Out of them, 2 were synonimous variants, 1 was stop-gained variant.
 
+![image3](./images/image3.png)
+
 ### Summary and conclusion
 According to found variants in provided data, the [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000198286;r=7:2906142-3044228;tl=B5j5OQNfJqj0ZkRK-10087084) gene in the donor of the DNA is highly variant. Majority of the found variants were located in non-coding parts of the gene. 3 variants were located in the protein-coding parts of the gene, out of which one was stop mutation.
 
