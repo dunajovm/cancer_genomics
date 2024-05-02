@@ -59,4 +59,7 @@ bcftools query -f "%CHROM\t%POS\t%REF\t%ALT\n" variants.vcf | wc -l
 We will use online version of VEP for anotating variants.
 VEP can be found in following [link](https://www.ensembl.org/Tools/VEP).
 As the reference, we will use human genome, assembly GRCh38.p14.
+![image1](./images/Screenshot 2024-05-02 at 22-11-20 Variant Effect Predictor - Homo_sapiens - Ensembl genome browser 111.png)
+Result showed, that one gene was affected by the found variants.
+
 
