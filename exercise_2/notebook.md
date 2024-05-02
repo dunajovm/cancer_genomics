@@ -27,8 +27,17 @@ Same as in Exercise_1, we will map the reads to the reference genome. As referen
 human genome from [here](https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz).
 
 We will create separate alignment to reference genome using tumor and germline samples.
+Similarly to previous assignment, we will need to first create index file from reference, before we could start with mapping.
 
 ```bash
 # get the reference
 wget https://hgdownload.soe.ucsc.edu/goldenPath/hg19/bigZips/hg19.fa.gz
+# create index files from reference
+bwa index hg19.fa.gz
+
+# map the germline sample
+bwa mem hg19.fa.gz wt.r1.gz wt.r2.gz > alignment_germline.bam
+
+# map the tumor sample
+bwa mem hg19.fa.gz tu.r1.gz tu.r2.gz > alignment_tumorls.bam
 ```
