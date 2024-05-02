@@ -1,2 +1,2 @@
-# cancer_genomics
-Repository for lectures
+# Analytical Methods in Cancer Genomics
+Repository for lecture exercises
