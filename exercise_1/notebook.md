@@ -73,7 +73,7 @@ Affected was gene [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=
 
 ![image3](./images/image3.png)
 
-### Summary and conclusion
+## Summary and conclusion
 According to found variants in provided data, the [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000198286;r=7:2906142-3044228;tl=B5j5OQNfJqj0ZkRK-10087084) gene in the donor of the DNA is highly variant. Majority of the found variants were located in non-coding parts of the gene. 3 variants were located in the protein-coding parts of the gene, out of which one was stop mutation.
 
 Stop mutation is affecting trancript [ENST00000396946.9](https://www.ensembl.org/Homo_sapiens/Transcript/Summary?db=core;g=ENSG00000198286;r=7:2906142-3043867;t=ENST00000396946;tl=B5j5OQNfJqj0ZkRK-10087084), in the way, that the way, that transcript is ending prematurely (only 21 out of 25 exons will be transcribed).
