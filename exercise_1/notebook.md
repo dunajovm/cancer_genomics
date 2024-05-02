@@ -59,8 +59,24 @@ bcftools query -f "%CHROM\t%POS\t%REF\t%ALT\n" variants.vcf | wc -l
 We will use online version of VEP for anotating variants.
 VEP can be found in following [link](https://www.ensembl.org/Tools/VEP).
 As the reference, we will use human genome, assembly GRCh38.p14.
+
+
 ![image1](./images/image1.png)
+
+
 Result showed, that one gene was affected by the found variants.
+
+
 ![image2](./images/image2.png)
+
+Affected was gene [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000198286;r=7:2906142-3044228;tl=B5j5OQNfJqj0ZkRK-10087084). Out of total 41 variants, 38 variants were located in non-coding intron or exon parts of the gene. Only 3 variants were located in the coding part of the protein transcripts. Out of them, 2 were synonimous variants, 1 was stop-gained variant.
+
+### Summary and conclusion
+According to found variants in provided data, the [CARD11](https://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000198286;r=7:2906142-3044228;tl=B5j5OQNfJqj0ZkRK-10087084) gene in the donor of the DNA is highly variant. Majority of the found variants were located in non-coding parts of the gene. 3 variants were located in the protein-coding parts of the gene, out of which one was stop mutation.
+
+Stop mutation is affecting trancript [ENST00000396946.9](https://www.ensembl.org/Homo_sapiens/Transcript/Summary?db=core;g=ENSG00000198286;r=7:2906142-3043867;t=ENST00000396946;tl=B5j5OQNfJqj0ZkRK-10087084), in the way, that the way, that transcript is ending prematurely (only 21 out of 25 exons will be transcribed).
+
+This is likely resulting in the disfunction of the transcript.
+
 
 
