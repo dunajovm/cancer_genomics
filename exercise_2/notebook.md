@@ -39,5 +39,5 @@ bwa index hg19.fa.gz
 bwa mem -t 4 hg19.fa.gz wt.r1.fq.gz wt.r2.fq.gz > alignment_germline.bam
 
 # map the tumor sample, using 4 threads for faster computation
-bwa mem -t 4 hg19.fa.gz tu.r1.fq.gz tu.r2.fq.gz > alignment_tumorls.bam
+bwa mem -t 4 hg19.fa.gz tu.r1.fq.gz tu.r2.fq.gz > alignment_tumor.bam
 ```
