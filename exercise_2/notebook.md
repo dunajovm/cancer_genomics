@@ -50,7 +50,7 @@ Delly will need .fai index file of the reference genome, so we will generate thi
 
 Also we will need index files for both alignments - for tumor and germline samples.
 
-```
+```bash
 gzip -d hg19.fa.gz
 samtools faidx hg19.fa
 
@@ -60,7 +60,14 @@ samtools index alignment_tumor_sorted.bam
 samtools index alignment_germline_sorted.bam
 
 delly call -q 20 -g hg19.fa -o variants_output.bcf alignment_tumor_sorted.bam alignment_germline_sorted.bam
+```
+Next, we need to do filtering somatic variants in the output file. For this, we will first generate tsv file `samples.tsv` with following content:
+```
+alignment_tumor_sorted tumor
+alignment_germline_sorted control
 
-
- 
+```
+Then we can continue to sort:
+```bash
+delly filter -p -f somatic -o somatic.bcf -a 0.25 -s samples.tsv variants_output.bcf
 ```
