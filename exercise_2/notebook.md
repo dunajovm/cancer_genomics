@@ -14,6 +14,7 @@ sudo apt install -y r-base-core
 sudo apt install -y delly
 sudo apt install -y tabix
 
+
 ```
 Next, we will get our data. Data labeled as *tu* are reads from the tumor sample. Data labeled as *wt* are reads from the germline sample.
 
@@ -70,4 +71,14 @@ alignment_germline_sorted control
 Then we can continue to sort:
 ```bash
 delly filter -p -f somatic -o somatic.bcf -a 0.25 -s samples.tsv variants_output.bcf
+```
+
+### Generate read-depth plot
+First, we will generate other files via delly cnv.
+
+This will need mappability map of the used genome.
+Mappability map will be generated via:
+
+```
+
 ```
