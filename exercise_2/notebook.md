@@ -65,5 +65,9 @@ Next, we will get read depth of each sample via `samtools depth`.
 First, we will downsample the file to the region of the interest.
 
 ```
-samtools view -b input.bam chrX:20000000-40000000 > output.bam
+samtools view -b alignment_germline_sorted.bam chrX:20000000-40000000 > germline_sorted.bam
+samtools view -b alignment_tumor_sorted.bam chrX:20000000-40000000 > tumor_sorted.bam
+
+samtools depth germline_sorted.bam > germline_depth.txt.gz
+samtools depth tumor_sorted.bam > tumor_depth.txt.gz
 ```
