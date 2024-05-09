@@ -11,24 +11,7 @@ sudo apt install -y bwa
 sudo apt install -y bcftools
 sudo apt install -y samtools
 sudo apt install -y r-base-core
-sudo apt install -y delly
-sudo apt install -y tabix
-sudo apt install -y curl
 
-# install miniconda
-
-mkdir -p ~/miniconda3
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
-bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
-rm -rf ~/miniconda3/miniconda.sh
-~/miniconda3/bin/conda init bash
-~/miniconda3/bin/conda init zsh
-
-```
-Then there is need to restart the shell.
-```
-conda install bioconda::dicey
-conda install bioconda::willy
 ```
 
 Next, we will get our data. Data labeled as *tu* are reads from the tumor sample. Data labeled as *wt* are reads from the germline sample.
@@ -75,25 +58,12 @@ samtools sort -@ 4 alignment_tumor.bam -o alignment_tumor_sorted.bam
 samtools index alignment_tumor_sorted.bam
 samtools index alignment_germline_sorted.bam
 
-delly call -q 20 -g hg19.fa -o variants_output.bcf alignment_tumor_sorted.bam alignment_germline_sorted.bam
-```
-Next, we need to do filtering somatic variants in the output file. For this, we will first generate tsv file `samples.tsv` with following content:
-```
-alignment_tumor_sorted tumor
-alignment_germline_sorted control
-
-```
-Then we can continue to sort:
-```bash
-delly filter -p -f somatic -o somatic.bcf -a 0.25 -s samples.tsv variants_output.bcf
 ```
 
 ### Generate read-depth plot
-First, we will generate other files via delly cnv.
-
-This will need mappability map of the used genome.
-Mappability map will be generated via:
+Next, we will get read depth of each sample via `samtools depth`.
+First, we will downsample the file to the region of the interest.
 
 ```
-
+samtools view -b input.bam chrX:20000000-40000000 > output.bam
 ```
