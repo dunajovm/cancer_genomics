@@ -71,3 +71,34 @@ samtools view -b alignment_tumor_sorted.bam chrX:20000000-40000000 > tumor_sorte
 samtools depth germline_sorted.bam > germline_depth.txt.gz
 samtools depth tumor_sorted.bam > tumor_depth.txt.gz
 ```
+Now we have read-depth data, which will be ploted via R.
+
+```R
+library(ggplot2)
+
+x = read.table("tumor_depth.txt.gz")
+new_data = x[seq(1,19925851,5), ,] # data needed to be downsampled for R to not fall while plotting
+p = ggplot(data=new_data, aes(x=new_data[,2], y=new_data[,3]))
+p = p+geom_line()+scale_y_log10()#+scale_y_continuous(limits = c(0,100))
+p = p+xlab("Position on chrX")
+p = p+ylab("Number of the reads")
+p
+ggsave("tumor_depth.png",p)
+
+x = read.table("germline_depth.txt.gz")
+new_data = x[seq(1,19925851,5), ,] # data needed to be downsampled for R to not fall while plotting
+p = ggplot(data=new_data, aes(x=new_data[,2], y=new_data[,3]))
+p = p+geom_line()+scale_y_log10()#+scale_y_continuous(limits = c(0,100))
+p = p+xlab("Position on chrX")
+p = p+ylab("Number of the reads")
+p
+ggsave("germline_depth.png",p)
+
+```
+## Obtained results and interpretation
+We analyzed reads, that were mapped on the X chromosome on the position 20000000-40000000. We analyzed read depth for reads originating from germline sample and from the tumor sample.
+
+For germline read depth, we obtained plot showing uniform distribution of read depth at the measured position in the genome.
+
+For germline read depth, we obtained plot showing, that approximately first half of the positions have significantly lower read depth, than the later.
+
