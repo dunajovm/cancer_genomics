@@ -105,6 +105,9 @@ For germline read depth, we obtained plot showing uniform distribution of read d
 
 For tumor read depth, we obtained plot showing, that approximately first half of the positions have significantly lower read depth, than the later.
 
+The regions with higher overall value of read-depth were presumably covered more times during sequencing, than the other regions, which should point to their higher proportion in the genome.
+
+
 **Plot of the tumor read depth:**
 ![tumor](./images/tumor_depth.png)
 
