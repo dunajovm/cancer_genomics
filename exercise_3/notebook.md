@@ -83,7 +83,7 @@ Export the significant results (padj < 0.01) to a CSV file
 
 ```R
 resOrdered <- res[order(res$pvalue),]
-resSig <- subset(resOrdered, padj < 0.1)
+resSig <- subset(resOrdered, padj < 0.01)
 write.csv(as.data.frame(resSig), 
           file="significant_results.csv")
 ```
